@@ -1,0 +1,49 @@
+global-styling:
+  version: 1.0
+  css:
+    theme:
+      css/styles.css: {}
+  js:
+    scripts/uswds.min.js: {}
+    scripts/uswds-init.min.js: {}
+    scripts/newFooter.js: {}
+    scripts/phoneForMobile.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+
+wizard:
+  js:
+    scripts/wizard.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+wizardstep:
+  js:
+    scripts/wizardStep.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+stateDirectory:
+  js:
+    scripts/stateDirectory.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+carousel:
+  js:
+    scripts/carousel.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+reportAProblem:
+  js:
+    scripts/reportAProblem.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery

@@ -1,0 +1,300 @@
+<?php
+
+/**
+ * @file
+ * Use proprocess for html twig.
+ */
+
+use Drupal\block\Entity\Block;
+use Drupal\Core\Render\Markup;
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Description message.
+ *
+ * @param mixed $variables
+ *   Self described.
+ * @param mixed $hook
+ *   Self described.
+ */
+function usa_twig_vars_preprocess(&$variables, $hook) {
+  if ($hook === 'html' || $hook === 'page') {
+    $usa_twig_vars = &drupal_static(__FUNCTION__);
+    if (!isset($usa_twig_vars)) {
+      // pre-populate $usa_twig_vars so we can rely on certain fields being present:
+      $usa_twig_vars = [
+        'id' => NULL,
+        'front' => 'not_homepage',
+        'nodetype' => NULL,
+        'pagetype' => NULL,
+        'datalayer_pagetype' => NULL,
+        'meta_noindex' => NULL,
+        'taxonomy_link_block' => NULL,
+      ];
+      $node = \Drupal::routeMatch()->getParameter('node');
+      $isFront = \Drupal::service('path.matcher')->isFrontPage();
+      $noindex = FALSE;
+
+      if (is_object($node) && method_exists($node, 'getFields')) {
+        // usagov_taxonomy_links is a "system breadcrumb" block whose twig file will render
+        // the taxonomy information for the dataLayer array. Here, we create a renderable
+        // version of the block and save it as a variable that can be rendered within the
+        // HTML <head> element in html.html.twig.
+        //
+        // The breadcrumb links aren't calculated until this block is actually rendered, so
+        // we do NOT have an opportunity to save or process the links themselves into the
+        // $variables array for html.html.twig to use.
+        $breadcrumb_block = Block::load('usagov_taxonomy_links');
+        $taxonomy_link_block = \Drupal::entityTypeManager()->getViewBuilder('block')->view($breadcrumb_block);
+        $usa_twig_vars['taxonomy_link_block'] = $taxonomy_link_block;
+
+        // Check if the page is not front page.
+        if ($isFront == 1) {
+          $isFront = 'homepage';
+        }
+        else {
+          $isFront = 'not_homepage';
+        }
+        // Check node has all the four variables set which must not be null.
+        $node_real_type = $node->getType();
+        if ($node->id() != NULL && $node_real_type != NULL && $isFront != NULL) {
+          // Check for a few special cases:
+          $special_node_type = FALSE;
+          // change "directory_record" to "federal_directory_record"
+          if ($node_real_type == 'directory_record') {
+            $special_node_type = 'federal_directory_record';
+          }
+          else {
+            // Check for special nodes by path:
+            switch ($node->toUrl()->toString()) {
+              case '/agency-index':
+              case '/es/indice-agencias':
+                $special_node_type = 'federal_directory_index';
+                $current_letter = \Drupal::request()->query->get('letter') ?: 'a';
+                if ($current_letter != 'a') {
+                  $noindex = TRUE;
+                }
+                break;
+
+              case '/state-governments':
+              case '/es/gobiernos-estatales':
+                $special_node_type = 'state_directory_index';
+                break;
+            }
+          }
+
+          $nodetype = $special_node_type ?: $node_real_type;
+          if ($nodetype == 'wizard_step') {
+            $noindex = TRUE;
+          }
+
+          if (($node_real_type == 'directory_record') && $node->hasField('field_acronym')) {
+            if ($acronym = $node->get('field_acronym')->value) {
+              $usa_twig_vars['head_title'] = $variables['head_title'];
+              $usa_twig_vars['head_title']['title'] = Markup::create(trim(strip_tags($variables['page']['#title'])) .
+                  " (" . trim(strip_tags($acronym)) . ")");
+            }
+          }
+
+          // Cleanup vars.
+          $usa_twig_vars['id'] = $node->id();
+          $usa_twig_vars['front'] = $isFront;
+          $usa_twig_vars['nodetype'] = $nodetype;
+          $usa_twig_vars['pagetype'] = usa_twig_vars_get_page_type($node);
+          $usa_twig_vars['datalayer_pagetype'] = $usa_twig_vars['pagetype'] == 'Standard Page' ? 'Content Page' : $usa_twig_vars['pagetype'];
+          $usa_twig_vars['meta_description'] = usa_twig_vars_get_meta_description($node);
+          $usa_twig_vars['meta_noindex'] = $noindex;
+          unset($isFront);
+        }
+      }
+    }
+    foreach ($usa_twig_vars as $key => $value) {
+      $variables[$key] = $value;
+    }
+  }
+}
+
+/**
+ * To allow for the hiding of menu items with page type set to Standard Page- Nav Hidden.
+ *
+ */
+function usa_twig_vars_preprocess_menu__sidebar_first(&$variables, $hook) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (is_object($node) && method_exists($node, 'getFields')) {
+    $variables['pagetype'] = usa_twig_vars_get_page_type($node);
+  }
+}
+
+function usa_twig_vars_get_page_type(&$node) {
+  $fields = $node->getFields();
+  if (array_key_exists('field_page_type', $fields)
+      && $fields['field_page_type'] != NULL
+      && !empty($fields['field_page_type']->getValue())
+      && $fields['field_page_type']->getValue()[0]['target_id'] != NULL) {
+    $term_id = $fields['field_page_type']->getValue()[0]['target_id'];
+    $term = Term::load($term_id);
+    $page_type = $term ? $term->get('name')->value : '';
+    return $page_type ?? 'content_page';
+  }
+}
+
+/**
+ * Get a string for the <meta description> tag, as entered in the CMS. Attempt
+ * to get text from field_meta_description, and if that is absent or does not
+ * contain text, from field_page_intro (which will be the more common case).
+ *
+ * @param [type] $node
+ * @return string, NULL
+ */
+function usa_twig_vars_get_meta_description(&$node) {
+  $fields = $node->getFields();
+  foreach (['field_meta_description', 'field_page_intro'] as $field_name) {
+    if (array_key_exists($field_name, $fields) && ($fields[$field_name] !== NULL) && $fields[$field_name]->value) {
+      $value = trim($fields[$field_name]->value);
+      if (strlen($value) > 0) {
+        return $value;
+      }
+    }
+  }
+  return '';
+}
+
+/**
+ * Remove field_page_intro content if field_hide_page_intro is set to TRUE.
+ *
+ * @param mixed $variables
+ *   Self described.
+ */
+function usa_twig_vars_preprocess_field__node__field_page_intro(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  // Check if field_hide_page_intro is True
+  // the set the value of the content to empty string
+  // but the fields content exist.
+  if (is_object($node) && method_exists($node, 'getFields')) {
+    $fields = $node->getFields();
+    if (array_key_exists('field_hide_page_intro', $fields) && ($fields['field_hide_page_intro'] != NULL)
+        && !empty($fields['field_hide_page_intro']->getValue())
+        && ($fields['field_hide_page_intro']->getValue()[0]['value'] != NULL)
+        && ($fields['field_hide_page_intro']->getValue()[0]['value'] == TRUE)) {
+      $variables['items'][0]['content']['#context']['value'] = '';
+    }
+  }
+}
+
+/**
+ * Preprocess title for Federal Agency pages
+ *
+ */
+function usa_twig_vars_preprocess_page_title(&$variables, $hook) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (is_object($node) && method_exists($node, 'getFields')) {
+    if (($node->getType() == 'directory_record') && $node->hasField('field_acronym')) {
+      if ($acronym = $node->get('field_acronym')->value) {
+        $variables['title_suffix']['#markup'] = '(' . $acronym . ')';
+      }
+    }
+  }
+}
+
+/**
+ * Add context to the federal_agencies view to allow us to show the current letter,
+ * and add links to the "next" and "previous" letters.
+ * Note that the _summary preprocess hook runs first (at least for this view) and
+ * populates a static variable with the list of possible letters, which the
+ * _list preprocess hook needs in order to figure out prev/next.
+ */
+function usa_twig_vars_preprocess_views_view_summary__federal_agencies(&$variables, $hook, $info) {
+  $our_unique_name = 'usa_twig_vars_preprocess_view_federal_agencies';
+  drupal_static_reset($our_unique_name);
+  $shared = &drupal_static($our_unique_name);
+  $shared = [];
+
+  // Letters are the title_truncated in the rows of the view's "result."
+  // At this point the current letter is available only via the Request object.
+  // (The core view summary doesn't use the current letter, but we do.)
+  $view = $variables['view'];
+  $rows = $view->result;
+  $letters = [];
+  foreach ($rows as $row) {
+    $letters[] = $row->title_truncated;
+  }
+  $current_letter = $view->getRequest()->query->get('letter') ?: 'a';
+  $current_letter = mb_strtoupper($current_letter);
+  $shared['current'] = $current_letter;
+
+  // Figure out next and previous letters.
+  $cur_idx = array_search($current_letter, $letters);
+  $next_idx = $cur_idx + 1;
+  $prev_idx = $cur_idx - 1;
+  if ($next_idx > array_key_last($letters)) {
+    $next_idx = array_key_first($letters);
+  }
+  if ($prev_idx < array_key_first($letters)) {
+    $prev_idx = array_key_last($letters);
+  }
+  $shared['next'] = $letters[$next_idx];
+  $shared['prev'] = $letters[$prev_idx];
+
+  $variables['alpha_context'] = $shared;
+}
+
+/**
+ * Modify output of menu item level (Hierarchy level) to be human readable.
+ */
+function usa_twig_vars_preprocess_views_view_field__published_pages_report(&$variables, $hook, $info) {
+  if ($variables['field']->field == 'level' ?? FALSE) {
+    if (empty($variables['output'])) {
+      $variables['output'] = 1;
+    }
+    else {
+      $output = $variables['field']->getValue($variables['row']);
+      $variables['output'] = (int) $output + 2;
+    }
+  }
+}
+
+/**
+ * Add context to the federal_agencies view to allow us to show the current letter,
+ * and add links to the "next" and "previous" letters.
+ */
+function usa_twig_vars_preprocess_views_view_list__federal_agencies(&$variables, $hook, $info) {
+  $alpha_context = &drupal_static('usa_twig_vars_preprocess_view_federal_agencies');
+  $variables['alpha_context'] = $alpha_context;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function usa_twig_vars_form_alter(&$form, &$form_state, $form_id) {
+  $form['#after_build'][] = 'usa_twig_vars_after_build';
+}
+
+/**
+ * Custom after build function
+ */
+function usa_twig_vars_after_build($form, &$form_state) {
+  // Unchecks Generate automatic URL alias if path exists, if NOT home page
+  //in_array returns true unless strict mode is turned on but strict mode returns false on other pages where the key is found
+  if (array_key_exists('field_page_type', $form_state->getValues())) {
+    $page_type = NULL;
+    if (is_array($form_state->getValues()['field_page_type'])) {
+      $page_type = $form_state->getValues()['field_page_type'][0];
+    }
+    else {
+      $page_type = $form_state->getValues()['field_page_type'];
+    }
+    if ($page_type == "22") {
+      return $form;
+    }
+  }
+  if (in_array($form['#id'], [
+    'node-basic-page-form', 'node-basic-page-edit-form',
+  ])) {
+    $form['path']['widget'][0]['#open'] = TRUE;
+    if (array_key_exists('path', $form)) {
+      $form['path']['widget'][0]['pathauto']['#checked'] = FALSE;
+      $form['path']['widget'][0]['alias']['#required'] = TRUE;
+    }
+  }
+  return $form;
+}

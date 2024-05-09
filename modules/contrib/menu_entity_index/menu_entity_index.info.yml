@@ -1,0 +1,14 @@
+name: Menu Entity Index
+description: Maintains an index of menu links and their referenced entities.
+configure: menu_entity_index.configure
+
+type: module
+core_version_requirement: ^8.8 || ^9 || ^10
+
+dependencies:
+  - drupal:menu_link_content
+
+# Information added by Drupal.org packaging script on 2023-04-20
+version: '8.x-1.6'
+project: 'menu_entity_index'
+datestamp: 1681993124

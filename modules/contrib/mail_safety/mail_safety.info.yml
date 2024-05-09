@@ -1,0 +1,11 @@
+name: Mail Safety
+description: A simple and safe way to test and debug outgoing emails without having to worry that all your users will get unwanted emails.
+package: Mail
+core_version_requirement: ^9.4 || ^10
+configure: mail_safety.settings
+type: module
+
+# Information added by Drupal.org packaging script on 2023-03-14
+version: '2.0.0'
+project: 'mail_safety'
+datestamp: 1678822539

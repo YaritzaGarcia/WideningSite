@@ -73,15 +73,15 @@ final class MenuViewBuilderTest extends KernelTestBase {
     $expected_output = <<< 'HTML'
       <ul>
         <li>
-          <a href="/foo/1">Link 1</a>
+          <a href="../foo/1">Link 1</a>
           <ul>
             <li>
-              <a href="/foo/1/1">Link 1.1</a>
+              <a href="../foo/1/1">Link 1.1</a>
             </li>
            </ul>
         </li>
         <li>
-          <a href="/foo/2">Link 2</a>
+          <a href="../foo/2">Link 2</a>
         </li>
       </ul>
     HTML;
@@ -91,7 +91,7 @@ final class MenuViewBuilderTest extends KernelTestBase {
     $expected_output = <<< 'HTML'
       <ul>
         <li>
-          <a href="/foo/1/1">Link 1.1</a>
+          <a href="../foo/1/1">Link 1.1</a>
         </li>
        </ul>
     HTML;
@@ -101,10 +101,10 @@ final class MenuViewBuilderTest extends KernelTestBase {
     $expected_output = <<< 'HTML'
       <ul>
         <li>
-          <a href="/foo/1">Link 1</a>
+          <a href="../foo/1">Link 1</a>
         </li>
         <li>
-          <a href="/foo/2">Link 2</a>
+          <a href="../foo/2">Link 2</a>
         </li>
       </ul>
     HTML;

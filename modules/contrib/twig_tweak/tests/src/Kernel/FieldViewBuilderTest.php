@@ -93,7 +93,7 @@ final class FieldViewBuilderTest extends AbstractTestCase {
       'max-age' => 50,
     ];
     self::assertCache($expected_cache, $build['#cache']);
-    $expected_html = '<span><a href="/node/1" hreflang="en">Public node</a></span>';
+    $expected_html = '<span><a href="../node/1" hreflang="en">Public node</a></span>';
     self::assertSame($expected_html, $this->renderPlain($build));
 
     // -- Private node with access check.

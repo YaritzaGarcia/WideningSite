@@ -31,21 +31,21 @@
   background-color: #e6eee0;
 }
 .messages--status .messages__content {
-  background-image: url(/core/misc/icons/73b355/check.svg);
+  background-image: url(../core/misc/icons/73b355/check.svg);
 }
 .messages--warning {
   border: 1px solid #fae2a4;
   background-color: #fcf1d4;
 }
 .messages--warning .messages__content {
-  background-image: url(/core/misc/icons/e29700/warning.svg);
+  background-image: url(../core/misc/icons/e29700/warning.svg);
 }
 .messages--error {
   border: 1px solid #f8c8d5;
   background-color: #f9e6eb;
 }
 .messages--error .messages__content {
-  background-image: url(/core/misc/icons/e32700/error.svg);
+  background-image: url(../core/misc/icons/e32700/error.svg);
 }
 .messages--error .error {
   color: inherit;

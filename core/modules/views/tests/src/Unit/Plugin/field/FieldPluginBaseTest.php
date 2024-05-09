@@ -342,38 +342,38 @@ class FieldPluginBaseTest extends UnitTestCase {
   public function providerTestRenderAsLinkWithPathAndOptions() {
     $data = [];
     // Simple path with default options.
-    $data[] = ['test-path', [], [], '<a href="/test-path">value</a>'];
+    $data[] = ['test-path', [], [], '<a href="../test-path">value</a>'];
     // Add a fragment.
-    $data[] = ['test-path', ['fragment' => 'test'], '<a href="/test-path#test">value</a>'];
+    $data[] = ['test-path', ['fragment' => 'test'], '<a href="../test-path#test">value</a>'];
     // Rel attributes.
-    $data[] = ['test-path', ['rel' => 'up'], '<a href="/test-path" rel="up">value</a>'];
+    $data[] = ['test-path', ['rel' => 'up'], '<a href="../test-path" rel="up">value</a>'];
     // Target attributes.
-    $data[] = ['test-path', ['target' => '_blank'], '<a href="/test-path" target="_blank">value</a>'];
+    $data[] = ['test-path', ['target' => '_blank'], '<a href="../test-path" target="_blank">value</a>'];
     // Link attributes.
-    $data[] = ['test-path', ['link_attributes' => ['foo' => 'bar']], '<a href="/test-path" foo="bar">value</a>'];
+    $data[] = ['test-path', ['link_attributes' => ['foo' => 'bar']], '<a href="../test-path" foo="bar">value</a>'];
     // Manual specified query.
-    $data[] = ['test-path', ['query' => ['foo' => 'bar']], '<a href="/test-path?foo=bar">value</a>'];
+    $data[] = ['test-path', ['query' => ['foo' => 'bar']], '<a href="../test-path?foo=bar">value</a>'];
     // Query specified as part of the path.
-    $data[] = ['test-path?foo=bar', [], '<a href="/test-path?foo=bar">value</a>'];
+    $data[] = ['test-path?foo=bar', [], '<a href="../test-path?foo=bar">value</a>'];
     // Query specified as option and path.
     // @todo Do we expect that options override all existing ones?
-    $data[] = ['test-path?foo=bar', ['query' => ['key' => 'value']], '<a href="/test-path?key=value">value</a>'];
+    $data[] = ['test-path?foo=bar', ['query' => ['key' => 'value']], '<a href="../test-path?key=value">value</a>'];
     // Alias flag.
-    $data[] = ['test-path', ['alias' => TRUE], '<a href="/test-path">value</a>'];
+    $data[] = ['test-path', ['alias' => TRUE], '<a href="../test-path">value</a>'];
     // Note: In contrast to the testRenderAsLinkWithUrlAndOptions test we don't
     // test the language, because the path processor for the language won't be
     // executed for paths which aren't routed.
 
     // Entity flag.
     $entity = $this->createMock('Drupal\Core\Entity\EntityInterface');
-    $data[] = ['test-path', ['entity' => $entity], '<a href="/test-path">value</a>'];
+    $data[] = ['test-path', ['entity' => $entity], '<a href="../test-path">value</a>'];
     // entity_type flag.
     $entity_type_id = 'node';
-    $data[] = ['test-path', ['entity_type' => $entity_type_id], '<a href="/test-path">value</a>'];
+    $data[] = ['test-path', ['entity_type' => $entity_type_id], '<a href="../test-path">value</a>'];
     // prefix
-    $data[] = ['test-path', ['prefix' => 'test_prefix'], '<a href="/test-path">value</a>', 'test_prefix<a href="/test-path">value</a>'];
+    $data[] = ['test-path', ['prefix' => 'test_prefix'], '<a href="../test-path">value</a>', 'test_prefix<a href="../test-path">value</a>'];
     // suffix.
-    $data[] = ['test-path', ['suffix' => 'test_suffix'], '<a href="/test-path">value</a>', '<a href="/test-path">value</a>test_suffix'];
+    $data[] = ['test-path', ['suffix' => 'test_suffix'], '<a href="../test-path">value</a>', '<a href="../test-path">value</a>test_suffix'];
 
     // External URL.
     $data[] = ['https://www.example.com', [], [], '<a href="https://www.example.com">value</a>'];
@@ -429,66 +429,66 @@ class FieldPluginBaseTest extends UnitTestCase {
 
     // Simple path with default options.
     $url = Url::fromRoute('test_route');
-    $data[] = [$url, [], clone $url, '/test-path', clone $url, '<a href="/test-path">value</a>'];
+    $data[] = [$url, [], clone $url, '/test-path', clone $url, '<a href="../test-path">value</a>'];
 
     // Simple URL with parameters.
     $url_parameters = Url::fromRoute('test_route', ['key' => 'value']);
-    $data[] = [$url_parameters, [], clone $url_parameters, '/test-path/value', clone $url_parameters, '<a href="/test-path/value">value</a>'];
+    $data[] = [$url_parameters, [], clone $url_parameters, '/test-path/value', clone $url_parameters, '<a href="../test-path/value">value</a>'];
 
     // Add a fragment.
     $url = Url::fromRoute('test_route');
     $url_with_fragment = Url::fromRoute('test_route');
     $options = ['fragment' => 'test'] + static::DEFAULT_URL_OPTIONS;
     $url_with_fragment->setOptions($options);
-    $data[] = [$url, ['fragment' => 'test'], $url_with_fragment, '/test-path#test', clone $url_with_fragment, '<a href="/test-path#test">value</a>'];
+    $data[] = [$url, ['fragment' => 'test'], $url_with_fragment, '/test-path#test', clone $url_with_fragment, '<a href="../test-path#test">value</a>'];
 
     // Rel attributes.
     $url = Url::fromRoute('test_route');
     $url_with_rel = Url::fromRoute('test_route');
     $options = ['attributes' => ['rel' => 'up']] + static::DEFAULT_URL_OPTIONS;
     $url_with_rel->setOptions($options);
-    $data[] = [$url, ['rel' => 'up'], clone $url, '/test-path', $url_with_rel, '<a href="/test-path" rel="up">value</a>'];
+    $data[] = [$url, ['rel' => 'up'], clone $url, '/test-path', $url_with_rel, '<a href="../test-path" rel="up">value</a>'];
 
     // Target attributes.
     $url = Url::fromRoute('test_route');
     $url_with_target = Url::fromRoute('test_route');
     $options = ['attributes' => ['target' => '_blank']] + static::DEFAULT_URL_OPTIONS;
     $url_with_target->setOptions($options);
-    $data[] = [$url, ['target' => '_blank'], $url_with_target, '/test-path', clone $url_with_target, '<a href="/test-path" target="_blank">value</a>'];
+    $data[] = [$url, ['target' => '_blank'], $url_with_target, '/test-path', clone $url_with_target, '<a href="../test-path" target="_blank">value</a>'];
 
     // Link attributes.
     $url = Url::fromRoute('test_route');
     $url_with_link_attributes = Url::fromRoute('test_route');
     $options = ['attributes' => ['foo' => 'bar']] + static::DEFAULT_URL_OPTIONS;
     $url_with_link_attributes->setOptions($options);
-    $data[] = [$url, ['link_attributes' => ['foo' => 'bar']], clone $url, '/test-path', $url_with_link_attributes, '<a href="/test-path" foo="bar">value</a>'];
+    $data[] = [$url, ['link_attributes' => ['foo' => 'bar']], clone $url, '/test-path', $url_with_link_attributes, '<a href="../test-path" foo="bar">value</a>'];
 
     // Manual specified query.
     $url = Url::fromRoute('test_route');
     $url_with_query = Url::fromRoute('test_route');
     $options = ['query' => ['foo' => 'bar']] + static::DEFAULT_URL_OPTIONS;
     $url_with_query->setOptions($options);
-    $data[] = [$url, ['query' => ['foo' => 'bar']], clone $url_with_query, '/test-path?foo=bar', $url_with_query, '<a href="/test-path?foo=bar">value</a>'];
+    $data[] = [$url, ['query' => ['foo' => 'bar']], clone $url_with_query, '/test-path?foo=bar', $url_with_query, '<a href="../test-path?foo=bar">value</a>'];
 
     // Query specified as part of the path.
     $url = Url::fromRoute('test_route')->setOption('query', ['foo' => 'bar']);
     $url_with_query = clone $url;
     $url_with_query->setOptions(['query' => ['foo' => 'bar']] + $url_with_query->getOptions());
-    $data[] = [$url, [], $url_with_query, '/test-path?foo=bar', clone $url, '<a href="/test-path?foo=bar">value</a>'];
+    $data[] = [$url, [], $url_with_query, '/test-path?foo=bar', clone $url, '<a href="../test-path?foo=bar">value</a>'];
 
     // Query specified as option and path.
     $url = Url::fromRoute('test_route')->setOption('query', ['foo' => 'bar']);
     $url_with_query = Url::fromRoute('test_route');
     $options = ['query' => ['key' => 'value']] + static::DEFAULT_URL_OPTIONS;
     $url_with_query->setOptions($options);
-    $data[] = [$url, ['query' => ['key' => 'value']], $url_with_query, '/test-path?key=value', clone $url_with_query, '<a href="/test-path?key=value">value</a>'];
+    $data[] = [$url, ['query' => ['key' => 'value']], $url_with_query, '/test-path?key=value', clone $url_with_query, '<a href="../test-path?key=value">value</a>'];
 
     // Alias flag.
     $url = Url::fromRoute('test_route');
     $url_without_alias = Url::fromRoute('test_route');
     $options = ['alias' => TRUE] + static::DEFAULT_URL_OPTIONS;
     $url_without_alias->setOptions($options);
-    $data[] = [$url, ['alias' => TRUE], $url_without_alias, '/test-path', clone $url_without_alias, '<a href="/test-path">value</a>'];
+    $data[] = [$url, ['alias' => TRUE], $url_without_alias, '/test-path', clone $url_without_alias, '<a href="../test-path">value</a>'];
 
     // Language flag.
     $language = new Language(['id' => 'fr']);
@@ -496,7 +496,7 @@ class FieldPluginBaseTest extends UnitTestCase {
     $url_with_language = Url::fromRoute('test_route');
     $options = ['language' => $language] + static::DEFAULT_URL_OPTIONS;
     $url_with_language->setOptions($options);
-    $data[] = [$url, ['language' => $language], $url_with_language, '/fr/test-path', clone $url_with_language, '<a href="/fr/test-path" hreflang="fr">value</a>'];
+    $data[] = [$url, ['language' => $language], $url_with_language, '/fr/test-path', clone $url_with_language, '<a href="../fr/test-path" hreflang="fr">value</a>'];
 
     // Entity flag.
     $entity = (new Prophet())->prophesize(EntityInterface::class)->reveal();
@@ -504,7 +504,7 @@ class FieldPluginBaseTest extends UnitTestCase {
     $url_with_entity = Url::fromRoute('test_route');
     $options = ['entity' => $entity] + static::DEFAULT_URL_OPTIONS;
     $url_with_entity->setOptions($options);
-    $data[] = [$url, ['entity' => $entity], $url_with_entity, '/test-path', clone $url_with_entity, '<a href="/test-path">value</a>'];
+    $data[] = [$url, ['entity' => $entity], $url_with_entity, '/test-path', clone $url_with_entity, '<a href="../test-path">value</a>'];
 
     // Test entity_type flag.
     $entity_type_id = 'node';
@@ -512,15 +512,15 @@ class FieldPluginBaseTest extends UnitTestCase {
     $url_with_entity_type = Url::fromRoute('test_route');
     $options = ['entity_type' => $entity_type_id] + static::DEFAULT_URL_OPTIONS;
     $url_with_entity_type->setOptions($options);
-    $data[] = [$url, ['entity_type' => $entity_type_id], $url_with_entity_type, '/test-path', clone $url_with_entity_type, '<a href="/test-path">value</a>'];
+    $data[] = [$url, ['entity_type' => $entity_type_id], $url_with_entity_type, '/test-path', clone $url_with_entity_type, '<a href="../test-path">value</a>'];
 
     // Test prefix.
     $url = Url::fromRoute('test_route');
-    $data[] = [$url, ['prefix' => 'test_prefix'], clone $url, '/test-path', clone $url, '<a href="/test-path">value</a>', 'test_prefix<a href="/test-path">value</a>'];
+    $data[] = [$url, ['prefix' => 'test_prefix'], clone $url, '/test-path', clone $url, '<a href="../test-path">value</a>', 'test_prefix<a href="../test-path">value</a>'];
 
     // Test suffix.
     $url = Url::fromRoute('test_route');
-    $data[] = [$url, ['suffix' => 'test_suffix'], clone $url, '/test-path', clone $url, '<a href="/test-path">value</a>', '<a href="/test-path">value</a>test_suffix'];
+    $data[] = [$url, ['suffix' => 'test_suffix'], clone $url, '/test-path', clone $url, '<a href="../test-path">value</a>', '<a href="../test-path">value</a>test_suffix'];
 
     return $data;
   }
@@ -568,7 +568,7 @@ class FieldPluginBaseTest extends UnitTestCase {
    */
   public function providerTestRenderAsLinkWithPathAndTokens() {
     $tokens = ['{{ foo }}' => 123];
-    $link_html = '<a href="/test-path/123">value</a>';
+    $link_html = '<a href="../test-path/123">value</a>';
 
     $data = [];
 
@@ -636,7 +636,7 @@ class FieldPluginBaseTest extends UnitTestCase {
     $data[] = ['{{ foo }}', ['{{ foo }}' => 'http://www.example.com'], '<a href="http://www.example.com">value</a>', ['context_path' => 'http://www.example.com']];
     $data[] = ['{{ foo }}', ['{{ foo }}' => ''], 'value', ['context_path' => '']];
     $data[] = ['{{ foo }}', ['{{ foo }}' => ''], 'value', ['context_path' => '', 'alter' => ['external' => TRUE]]];
-    $data[] = ['{{ foo }}', ['{{ foo }}' => '/test-path/123'], '<a href="/test-path/123">value</a>', ['context_path' => '/test-path/123']];
+    $data[] = ['{{ foo }}', ['{{ foo }}' => '/test-path/123'], '<a href="../test-path/123">value</a>', ['context_path' => '/test-path/123']];
 
     return $data;
   }

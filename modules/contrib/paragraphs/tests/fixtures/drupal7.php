@@ -55052,7 +55052,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '7002',
   'weight' => '0',
-  'info' => 'a:14:{s:4:"name";s:4:"List";s:11:"description";s:69:"Defines list field types. Use with Options to create selection lists.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.56";s:4:"core";s:3:"7.x";s:12:"dependencies";a:2:{i:0;s:5:"field";i:1;s:7:"options";}s:5:"files";a:1:{i:0;s:15:"tests/list.test";}s:7:"project";s:6:"drupal";s:9:"datestamp";s:10:"1498069849";s:5:"mtime";i:1498069849;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:14:{s:4:"name";s:4:"List";s:11:"description";s:69:"Defines list field types. Use with Options to create selection lists.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.56";s:4:"core";s:3:"7.x";s:12:"dependencies";a:2:{i:0;s:5:"field";i:1;s:7:"options";}s:5:"files";a:1:{i:0;s:15:"tests/list.test";}s:7:"project";s:6:"drupal";s:9:"datestamp";s:10:"1498069849";s:5:"mtime";i:1498069849;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'modules/field/modules/list/tests/list_test.module',
@@ -55074,7 +55074,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '0',
   'weight' => '0',
-  'info' => 'a:14:{s:4:"name";s:6:"Number";s:11:"description";s:28:"Defines numeric field types.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.56";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:5:"field";}s:5:"files";a:1:{i:0;s:11:"number.test";}s:7:"project";s:6:"drupal";s:9:"datestamp";s:10:"1498069849";s:5:"mtime";i:1498069849;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:14:{s:4:"name";s:6:"Number";s:11:"description";s:28:"Defines numeric field types.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.56";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:5:"field";}s:5:"files";a:1:{i:0;s:11:"number.test";}s:7:"project";s:6:"drupal";s:9:"datestamp";s:10:"1498069849";s:5:"mtime";i:1498069849;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'modules/field/modules/options/options.module',
@@ -55096,7 +55096,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '7000',
   'weight' => '0',
-  'info' => 'a:14:{s:4:"name";s:4:"Text";s:11:"description";s:32:"Defines simple text field types.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.56";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:5:"field";}s:5:"files";a:1:{i:0;s:9:"text.test";}s:8:"required";b:1;s:7:"project";s:6:"drupal";s:9:"datestamp";s:10:"1498069849";s:5:"mtime";i:1498069849;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:14:{s:4:"name";s:4:"Text";s:11:"description";s:32:"Defines simple text field types.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.56";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:5:"field";}s:5:"files";a:1:{i:0;s:9:"text.test";}s:8:"required";b:1;s:7:"project";s:6:"drupal";s:9:"datestamp";s:10:"1498069849";s:5:"mtime";i:1498069849;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'modules/field/tests/field_test.module',
@@ -55129,7 +55129,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '0',
   'weight' => '0',
-  'info' => 'a:14:{s:4:"name";s:4:"File";s:11:"description";s:26:"Defines a file field type.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.56";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:5:"field";}s:5:"files";a:1:{i:0;s:15:"tests/file.test";}s:7:"project";s:6:"drupal";s:9:"datestamp";s:10:"1498069849";s:5:"mtime";i:1498069849;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:14:{s:4:"name";s:4:"File";s:11:"description";s:26:"Defines a file field type.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.56";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:5:"field";}s:5:"files";a:1:{i:0;s:15:"tests/file.test";}s:7:"project";s:6:"drupal";s:9:"datestamp";s:10:"1498069849";s:5:"mtime";i:1498069849;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'modules/file/tests/file_module_test.module',
@@ -55184,7 +55184,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '7005',
   'weight' => '0',
-  'info' => 'a:15:{s:4:"name";s:5:"Image";s:11:"description";s:34:"Provides image manipulation tools.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.56";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:4:"file";}s:5:"files";a:1:{i:0;s:10:"image.test";}s:9:"configure";s:31:"admin/config/media/image-styles";s:7:"project";s:6:"drupal";s:9:"datestamp";s:10:"1498069849";s:5:"mtime";i:1498069849;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:15:{s:4:"name";s:5:"Image";s:11:"description";s:34:"Provides image manipulation tools.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.56";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:4:"file";}s:5:"files";a:1:{i:0;s:10:"image.test";}s:9:"configure";s:31:"admin/config/media/image-styles";s:7:"project";s:6:"drupal";s:9:"datestamp";s:10:"1498069849";s:5:"mtime";i:1498069849;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'modules/image/tests/image_module_test.module',
@@ -55987,7 +55987,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '7011',
   'weight' => '0',
-  'info' => 'a:15:{s:4:"name";s:8:"Taxonomy";s:11:"description";s:38:"Enables the categorization of content.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.56";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:7:"options";}s:5:"files";a:2:{i:0;s:15:"taxonomy.module";i:1;s:13:"taxonomy.test";}s:9:"configure";s:24:"admin/structure/taxonomy";s:7:"project";s:6:"drupal";s:9:"datestamp";s:10:"1498069849";s:5:"mtime";i:1498069849;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:15:{s:4:"name";s:8:"Taxonomy";s:11:"description";s:38:"Enables the categorization of content.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.56";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:7:"options";}s:5:"files";a:2:{i:0;s:15:"taxonomy.module";i:1;s:13:"taxonomy.test";}s:9:"configure";s:24:"admin/structure/taxonomy";s:7:"project";s:6:"drupal";s:9:"datestamp";s:10:"1498069849";s:5:"mtime";i:1498069849;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'modules/toolbar/toolbar.module',
@@ -56284,7 +56284,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '7004',
   'weight' => '0',
-  'info' => 'a:14:{s:4:"name";s:4:"Date";s:11:"description";s:33:"Makes date/time fields available.";s:12:"dependencies";a:1:{i:0;s:8:"date_api";}s:7:"package";s:9:"Date/Time";s:4:"core";s:3:"7.x";s:3:"php";s:3:"5.2";s:5:"files";a:10:{i:0;s:16:"date.migrate.inc";i:1;s:19:"tests/date_api.test";i:2;s:15:"tests/date.test";i:3;s:21:"tests/date_field.test";i:4;s:23:"tests/date_migrate.test";i:5;s:26:"tests/date_validation.test";i:6;s:24:"tests/date_timezone.test";i:7;s:27:"tests/date_views_pager.test";i:8;s:27:"tests/date_views_popup.test";i:9;s:20:"tests/date_form.test";}s:7:"version";s:8:"7.x-2.10";s:7:"project";s:4:"date";s:9:"datestamp";s:10:"1491562090";s:5:"mtime";i:1491562090;s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:14:{s:4:"name";s:4:"Date";s:11:"description";s:33:"Makes date/time fields available.";s:12:"dependencies";a:1:{i:0;s:8:"date_api";}s:7:"package";s:9:"Date/Time";s:4:"core";s:3:"7.x";s:3:"php";s:3:"5.2";s:5:"files";a:10:{i:0;s:16:"date.migrate.inc";i:1;s:19:"tests/date_api.test";i:2;s:15:"tests/date.test";i:3;s:21:"tests/date_field.test";i:4;s:23:"tests/date_migrate.test";i:5;s:26:"tests/date_validation.test";i:6;s:24:"tests/date_timezone.test";i:7;s:27:"tests/date_views_pager.test";i:8;s:27:"tests/date_views_popup.test";i:9;s:20:"tests/date_form.test";}s:7:"version";s:8:"7.x-2.10";s:7:"project";s:4:"date";s:9:"datestamp";s:10:"1491562090";s:5:"mtime";i:1491562090;s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'sites/all/modules/date/date_all_day/date_all_day.module',
@@ -56416,7 +56416,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '0',
   'weight' => '0',
-  'info' => 'a:14:{s:4:"name";s:5:"Email";s:11:"description";s:28:"Defines an email field type.";s:4:"core";s:3:"7.x";s:7:"package";s:6:"Fields";s:5:"files";a:1:{i:0;s:17:"email.migrate.inc";}s:7:"version";s:7:"7.x-1.3";s:7:"project";s:5:"email";s:9:"datestamp";s:10:"1397134155";s:5:"mtime";i:1397134155;s:12:"dependencies";a:0:{}s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:14:{s:4:"name";s:5:"Email";s:11:"description";s:28:"Defines an email field type.";s:4:"core";s:3:"7.x";s:7:"package";s:6:"Fields";s:5:"files";a:1:{i:0;s:17:"email.migrate.inc";}s:7:"version";s:7:"7.x-1.3";s:7:"project";s:5:"email";s:9:"datestamp";s:10:"1397134155";s:5:"mtime";i:1397134155;s:12:"dependencies";a:0:{}s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'sites/all/modules/entity/entity.module',
@@ -56482,7 +56482,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '7002',
   'weight' => '0',
-  'info' => 'a:15:{s:4:"name";s:16:"Entity Reference";s:11:"description";s:51:"Provides a field that can reference other entities.";s:7:"package";s:6:"Fields";s:4:"core";s:3:"7.x";s:12:"dependencies";a:2:{i:0;s:6:"entity";i:1;s:6:"ctools";}s:17:"test_dependencies";a:2:{i:0;s:5:"feeds";i:1;s:5:"views";}s:5:"files";a:12:{i:0;s:27:"entityreference.migrate.inc";i:1;s:30:"plugins/selection/abstract.inc";i:2;s:27:"plugins/selection/views.inc";i:3;s:29:"plugins/behavior/abstract.inc";i:4;s:40:"views/entityreference_plugin_display.inc";i:5;s:38:"views/entityreference_plugin_style.inc";i:6;s:43:"views/entityreference_plugin_row_fields.inc";i:7;s:35:"tests/entityreference.handlers.test";i:8;s:35:"tests/entityreference.taxonomy.test";i:9;s:32:"tests/entityreference.admin.test";i:10;s:32:"tests/entityreference.feeds.test";i:11;s:45:"tests/entityreference.entity_translation.test";}s:7:"version";s:7:"7.x-1.5";s:7:"project";s:15:"entityreference";s:9:"datestamp";s:10:"1502895850";s:5:"mtime";i:1502895850;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:15:{s:4:"name";s:16:"Entity Reference";s:11:"description";s:51:"Provides a field that can reference other entities.";s:7:"package";s:6:"Fields";s:4:"core";s:3:"7.x";s:12:"dependencies";a:2:{i:0;s:6:"entity";i:1;s:6:"ctools";}s:17:"test_dependencies";a:2:{i:0;s:5:"feeds";i:1;s:5:"views";}s:5:"files";a:12:{i:0;s:27:"entityreference.migrate.inc";i:1;s:30:"plugins/selection/abstract.inc";i:2;s:27:"plugins/selection/views.inc";i:3;s:29:"plugins/behavior/abstract.inc";i:4;s:40:"views/entityreference_plugin_display.inc";i:5;s:38:"views/entityreference_plugin_style.inc";i:6;s:43:"views/entityreference_plugin_row_fields.inc";i:7;s:35:"tests/entityreference.handlers.test";i:8;s:35:"tests/entityreference.taxonomy.test";i:9;s:32:"tests/entityreference.admin.test";i:10;s:32:"tests/entityreference.feeds.test";i:11;s:45:"tests/entityreference.entity_translation.test";}s:7:"version";s:7:"7.x-1.5";s:7:"project";s:15:"entityreference";s:9:"datestamp";s:10:"1502895850";s:5:"mtime";i:1502895850;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'sites/all/modules/entityreference/examples/entityreference_behavior_example/entityreference_behavior_example.module',
@@ -56515,7 +56515,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '7008',
   'weight' => '0',
-  'info' => 'a:16:{s:4:"name";s:16:"Field collection";s:11:"description";s:81:"Provides a field collection field, to which any number of fields can be attached.";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:6:"entity";}s:17:"test_dependencies";a:1:{i:0;s:18:"entity_translation";}s:5:"files";a:6:{i:0;s:21:"field_collection.test";i:1;s:27:"field_collection.entity.inc";i:2;s:25:"field_collection.info.inc";i:3;s:54:"includes/translation.handler.field_collection_item.inc";i:4;s:47:"views/field_collection_handler_relationship.inc";i:5;s:28:"field_collection.migrate.inc";}s:9:"configure";s:33:"admin/structure/field-collections";s:7:"package";s:6:"Fields";s:7:"version";s:14:"7.x-1.0-beta12";s:7:"project";s:16:"field_collection";s:9:"datestamp";s:10:"1479402861";s:5:"mtime";i:1479402861;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:16:{s:4:"name";s:16:"Field collection";s:11:"description";s:81:"Provides a field collection field, to which any number of fields can be attached.";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:6:"entity";}s:17:"test_dependencies";a:1:{i:0;s:18:"entity_translation";}s:5:"files";a:6:{i:0;s:21:"field_collection.test";i:1;s:27:"field_collection.entity.inc";i:2;s:25:"field_collection.info.inc";i:3;s:54:"includes/translation.handler.field_collection_item.inc";i:4;s:47:"views/field_collection_handler_relationship.inc";i:5;s:28:"field_collection.migrate.inc";}s:9:"configure";s:33:"admin/structure/field-collections";s:7:"package";s:6:"Fields";s:7:"version";s:14:"7.x-1.0-beta12";s:7:"project";s:16:"field_collection";s:9:"datestamp";s:10:"1479402861";s:5:"mtime";i:1479402861;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'sites/all/modules/i18n/i18n.module',
@@ -56713,7 +56713,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '7001',
   'weight' => '0',
-  'info' => 'a:14:{s:4:"name";s:4:"Link";s:11:"description";s:32:"Defines simple link field types.";s:4:"core";s:3:"7.x";s:7:"package";s:6:"Fields";s:5:"files";a:11:{i:0;s:11:"link.module";i:1;s:16:"link.migrate.inc";i:2;s:15:"tests/link.test";i:3;s:25:"tests/link.attribute.test";i:4;s:20:"tests/link.crud.test";i:5;s:28:"tests/link.crud_browser.test";i:6;s:21:"tests/link.token.test";i:7;s:28:"tests/link.entity_token.test";i:8;s:24:"tests/link.validate.test";i:9;s:44:"views/link_views_handler_argument_target.inc";i:10;s:44:"views/link_views_handler_filter_protocol.inc";}s:7:"version";s:7:"7.x-1.4";s:7:"project";s:4:"link";s:9:"datestamp";s:10:"1452830642";s:5:"mtime";i:1452830642;s:12:"dependencies";a:0:{}s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:14:{s:4:"name";s:4:"Link";s:11:"description";s:32:"Defines simple link field types.";s:4:"core";s:3:"7.x";s:7:"package";s:6:"Fields";s:5:"files";a:11:{i:0;s:11:"link.module";i:1;s:16:"link.migrate.inc";i:2;s:15:"tests/link.test";i:3;s:25:"tests/link.attribute.test";i:4;s:20:"tests/link.crud.test";i:5;s:28:"tests/link.crud_browser.test";i:6;s:21:"tests/link.token.test";i:7;s:28:"tests/link.entity_token.test";i:8;s:24:"tests/link.validate.test";i:9;s:44:"views/link_views_handler_argument_target.inc";i:10;s:44:"views/link_views_handler_filter_protocol.inc";}s:7:"version";s:7:"7.x-1.4";s:7:"project";s:4:"link";s:9:"datestamp";s:10:"1452830642";s:5:"mtime";i:1452830642;s:12:"dependencies";a:0:{}s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'sites/all/modules/paragraphs/modules/paragraphs_bundle_permissions/paragraphs_bundle_permissions.module',
@@ -56746,7 +56746,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '7101',
   'weight' => '0',
-  'info' => 'a:15:{s:4:"name";s:10:"Paragraphs";s:11:"description";s:47:"Paragraphs module to control your content flow.";s:4:"core";s:3:"7.x";s:7:"package";s:10:"Paragraphs";s:12:"dependencies";a:1:{i:0;s:6:"entity";}s:17:"test_dependencies";a:5:{i:0;s:6:"ctools";i:1;s:6:"entity";i:2;s:8:"features";i:3;s:9:"panelizer";i:4;s:9:"strongarm";}s:5:"files";a:6:{i:0;s:24:"ParagraphsItemEntity.inc";i:1;s:36:"ParagraphsItemMetadataController.inc";i:2;s:57:"migrate/destinations/MigrateDestinationParagraphsItem.inc";i:3;s:58:"migrate/fields/ParagraphsMigrateParagraphsFieldHandler.inc";i:4;s:41:"views/paragraphs_handler_relationship.inc";i:5;s:21:"tests/paragraphs.test";}s:7:"version";s:11:"7.x-1.0-rc5";s:7:"project";s:10:"paragraphs";s:9:"datestamp";s:10:"1487261293";s:5:"mtime";i:1487261293;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:15:{s:4:"name";s:10:"Paragraphs";s:11:"description";s:47:"Paragraphs module to control your content flow.";s:4:"core";s:3:"7.x";s:7:"package";s:10:"Paragraphs";s:12:"dependencies";a:1:{i:0;s:6:"entity";}s:17:"test_dependencies";a:5:{i:0;s:6:"ctools";i:1;s:6:"entity";i:2;s:8:"features";i:3;s:9:"panelizer";i:4;s:9:"strongarm";}s:5:"files";a:6:{i:0;s:24:"ParagraphsItemEntity.inc";i:1;s:36:"ParagraphsItemMetadataController.inc";i:2;s:57:"migrate/destinations/MigrateDestinationParagraphsItem.inc";i:3;s:58:"migrate/fields/ParagraphsMigrateParagraphsFieldHandler.inc";i:4;s:41:"views/paragraphs_handler_relationship.inc";i:5;s:21:"tests/paragraphs.test";}s:7:"version";s:11:"7.x-1.0-rc5";s:7:"project";s:10:"paragraphs";s:9:"datestamp";s:10:"1487261293";s:5:"mtime";i:1487261293;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'sites/all/modules/paragraphs/tests/paragraphs_test/paragraphs_test.module',
@@ -56768,7 +56768,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '0',
   'weight' => '0',
-  'info' => 'a:14:{s:4:"name";s:5:"Phone";s:11:"description";s:80:"The phone module allows administrators to define a field type for phone numbers.";s:7:"package";s:6:"Fields";s:12:"dependencies";a:1:{i:0;s:5:"field";}s:5:"files";a:30:{i:0;s:17:"phone.migrate.inc";i:1;s:19:"tests/phone.au.test";i:2;s:19:"tests/phone.be.test";i:3;s:19:"tests/phone.br.test";i:4;s:19:"tests/phone.ca.test";i:5;s:19:"tests/phone.ch.test";i:6;s:19:"tests/phone.cl.test";i:7;s:19:"tests/phone.cn.test";i:8;s:19:"tests/phone.cr.test";i:9;s:19:"tests/phone.cs.test";i:10;s:19:"tests/phone.eg.test";i:11;s:19:"tests/phone.es.test";i:12;s:19:"tests/phone.fr.test";i:13;s:19:"tests/phone.hu.test";i:14;s:19:"tests/phone.il.test";i:15;s:20:"tests/phone.int.test";i:16;s:19:"tests/phone.it.test";i:17;s:19:"tests/phone.jo.test";i:18;s:19:"tests/phone.nl.test";i:19;s:19:"tests/phone.nz.test";i:20;s:19:"tests/phone.pa.test";i:21;s:19:"tests/phone.ph.test";i:22;s:19:"tests/phone.pk.test";i:23;s:19:"tests/phone.pl.test";i:24;s:19:"tests/phone.ru.test";i:25;s:19:"tests/phone.se.test";i:26;s:19:"tests/phone.sg.test";i:27;s:19:"tests/phone.ua.test";i:28;s:19:"tests/phone.uk.test";i:29;s:19:"tests/phone.za.test";}s:4:"core";s:3:"7.x";s:7:"version";s:13:"7.x-1.0-beta1";s:7:"project";s:5:"phone";s:9:"datestamp";s:10:"1389732224";s:5:"mtime";i:1389732224;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:14:{s:4:"name";s:5:"Phone";s:11:"description";s:80:"The phone module allows administrators to define a field type for phone numbers.";s:7:"package";s:6:"Fields";s:12:"dependencies";a:1:{i:0;s:5:"field";}s:5:"files";a:30:{i:0;s:17:"phone.migrate.inc";i:1;s:19:"tests/phone.au.test";i:2;s:19:"tests/phone.be.test";i:3;s:19:"tests/phone.br.test";i:4;s:19:"tests/phone.ca.test";i:5;s:19:"tests/phone.ch.test";i:6;s:19:"tests/phone.cl.test";i:7;s:19:"tests/phone.cn.test";i:8;s:19:"tests/phone.cr.test";i:9;s:19:"tests/phone.cs.test";i:10;s:19:"tests/phone.eg.test";i:11;s:19:"tests/phone.es.test";i:12;s:19:"tests/phone.fr.test";i:13;s:19:"tests/phone.hu.test";i:14;s:19:"tests/phone.il.test";i:15;s:20:"tests/phone.int.test";i:16;s:19:"tests/phone.it.test";i:17;s:19:"tests/phone.jo.test";i:18;s:19:"tests/phone.nl.test";i:19;s:19:"tests/phone.nz.test";i:20;s:19:"tests/phone.pa.test";i:21;s:19:"tests/phone.ph.test";i:22;s:19:"tests/phone.pk.test";i:23;s:19:"tests/phone.pl.test";i:24;s:19:"tests/phone.ru.test";i:25;s:19:"tests/phone.se.test";i:26;s:19:"tests/phone.sg.test";i:27;s:19:"tests/phone.ua.test";i:28;s:19:"tests/phone.uk.test";i:29;s:19:"tests/phone.za.test";}s:4:"core";s:3:"7.x";s:7:"version";s:13:"7.x-1.0-beta1";s:7:"project";s:5:"phone";s:9:"datestamp";s:10:"1389732224";s:5:"mtime";i:1389732224;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'sites/all/modules/replicate/replicate.module',

@@ -26851,7 +26851,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '7000',
   'weight' => '0',
-  'info' => 'a:12:{s:4:"name";s:4:"Text";s:11:"description";s:32:"Defines simple text field types.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.92";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:5:"field";}s:5:"files";a:1:{i:0;s:9:"text.test";}s:8:"required";b:1;s:5:"mtime";i:1664863480;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:12:{s:4:"name";s:4:"Text";s:11:"description";s:32:"Defines simple text field types.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.92";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:5:"field";}s:5:"files";a:1:{i:0;s:9:"text.test";}s:8:"required";b:1;s:5:"mtime";i:1664863480;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'modules/field/tests/field_test.module',
@@ -26939,7 +26939,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '7005',
   'weight' => '0',
-  'info' => 'a:13:{s:4:"name";s:5:"Image";s:11:"description";s:34:"Provides image manipulation tools.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.92";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:4:"file";}s:5:"files";a:1:{i:0;s:10:"image.test";}s:9:"configure";s:31:"admin/config/media/image-styles";s:5:"mtime";i:1664863480;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:13:{s:4:"name";s:5:"Image";s:11:"description";s:34:"Provides image manipulation tools.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.92";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:4:"file";}s:5:"files";a:1:{i:0;s:10:"image.test";}s:9:"configure";s:31:"admin/config/media/image-styles";s:5:"mtime";i:1664863480;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'modules/image/tests/image_module_styles_test.module',
@@ -27797,7 +27797,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '7011',
   'weight' => '0',
-  'info' => 'a:13:{s:4:"name";s:8:"Taxonomy";s:11:"description";s:38:"Enables the categorization of content.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.92";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:7:"options";}s:5:"files";a:2:{i:0;s:15:"taxonomy.module";i:1;s:13:"taxonomy.test";}s:9:"configure";s:24:"admin/structure/taxonomy";s:5:"mtime";i:1664863480;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:13:{s:4:"name";s:8:"Taxonomy";s:11:"description";s:38:"Enables the categorization of content.";s:7:"package";s:4:"Core";s:7:"version";s:4:"7.92";s:4:"core";s:3:"7.x";s:12:"dependencies";a:1:{i:0;s:7:"options";}s:5:"files";a:2:{i:0;s:15:"taxonomy.module";i:1;s:13:"taxonomy.test";}s:9:"configure";s:24:"admin/structure/taxonomy";s:5:"mtime";i:1664863480;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'modules/toolbar/toolbar.module',
@@ -28138,7 +28138,7 @@ $connection->insert('system')
   'bootstrap' => '0',
   'schema_version' => '7200',
   'weight' => '0',
-  'info' => 'a:13:{s:4:"name";s:4:"Date";s:11:"description";s:33:"Makes date/time fields available.";s:12:"dependencies";a:1:{i:0;s:13:"date:date_api";}s:7:"package";s:9:"Date/Time";s:4:"core";s:3:"7.x";s:5:"files";a:10:{i:0;s:16:"date.migrate.inc";i:1;s:26:"tests/DateEmwTestCase.test";i:2;s:27:"tests/DateFormTestCase.test";i:3;s:30:"tests/DateMigrateTestCase.test";i:4;s:30:"tests/DateNowUnitTestCase.test";i:5;s:28:"tests/DateFieldTestBase.test";i:6;s:28:"tests/DateFieldTestCase.test";i:7;s:31:"tests/DateTimezoneTestCase.test";i:8;s:25:"tests/DateUiTestCase.test";i:9;s:33:"tests/DateValidationTestCase.test";}s:17:"test_dependencies";a:4:{i:0;s:13:"entity:entity";i:1;s:23:"features:features (2.x)";i:2;s:15:"migrate:migrate";i:3;s:11:"views:views";}s:5:"mtime";i:1664867418;s:7:"version";N;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
+  'info' => 'a:13:{s:4:"name";s:4:"Date";s:11:"description";s:33:"Makes date/time fields available.";s:12:"dependencies";a:1:{i:0;s:13:"date:date_api";}s:7:"package";s:9:"Date/Time";s:4:"core";s:3:"7.x";s:5:"files";a:10:{i:0;s:16:"date.migrate.inc";i:1;s:26:"tests/DateEmwTestCase.test";i:2;s:27:"tests/DateFormTestCase.test";i:3;s:30:"tests/DateMigrateTestCase.test";i:4;s:30:"tests/DateNowUnitTestCase.test";i:5;s:28:"tests/DateFieldTestBase.test";i:6;s:28:"tests/DateFieldTestCase.test";i:7;s:31:"tests/DateTimezoneTestCase.test";i:8;s:25:"tests/DateUiTestCase.test";i:9;s:33:"tests/DateValidationTestCase.test";}s:17:"test_dependencies";a:4:{i:0;s:13:"entity:entity";i:1;s:23:"features:features (2.x)";i:2;s:15:"migrate:migrate";i:3;s:11:"views:views";}s:5:"mtime";i:1664867418;s:7:"version";N;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="../admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
   'filename' => 'sites/all/modules/date/date_all_day/date_all_day.module',

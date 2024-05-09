@@ -413,7 +413,7 @@ class LinkGeneratorTest extends UnitTestCase {
     $url = new Url('test_route_4');
     $url->setUrlGenerator($this->urlGenerator);
     $result = $this->linkGenerator->generate("<script>alert('XSS!')</script>", $url);
-    $this->assertNoXPathResults('//a[@href="/test-route-4"]/script', (string) $result);
+    $this->assertNoXPathResults('//a[@href="../test-route-4"]/script', (string) $result);
   }
 
   /**
@@ -570,7 +570,7 @@ class LinkGeneratorTest extends UnitTestCase {
 
     $url = new Url('test_route_1');
     $url->setUrlGenerator($this->urlGenerator);
-    $expected_link_markup = '<a href="/test-route-1">Test</a>';
+    $expected_link_markup = '<a href="../test-route-1">Test</a>';
 
     // Test ::generate().
     $this->assertSame($expected_link_markup, (string) $this->linkGenerator->generate('Test', $url));
@@ -622,7 +622,7 @@ class LinkGeneratorTest extends UnitTestCase {
         $options['url'] = (new Url('test_route_1'))->setUrlGenerator($this->urlGenerator);
       });
 
-    $expected_link_markup = '<a href="/test-route-1">Test</a>';
+    $expected_link_markup = '<a href="../test-route-1">Test</a>';
     $this->assertEquals($expected_link_markup, (string) $this->linkGenerator->generate('Test', $url)->getGeneratedLink());
   }
 
@@ -642,7 +642,7 @@ class LinkGeneratorTest extends UnitTestCase {
     $link = Link::fromTextAndUrl('text', $url);
     $link->setLinkGenerator($this->linkGenerator);
     $output = $link->toString() . $link->toString();
-    $this->assertEquals('<a href="/" class="foo bar">text</a><a href="/" class="foo bar">text</a>', $output);
+    $this->assertEquals('<a href="../" class="foo bar">text</a><a href="../" class="foo bar">text</a>', $output);
   }
 
   /**

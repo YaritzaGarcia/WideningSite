@@ -44,8 +44,8 @@ class PlainTextOutputTest extends TestCase {
     $data = [];
 
     $data['simple-text'] = ['Giraffes and wombats', 'Giraffes and wombats'];
-    $data['simple-html'] = ['Giraffes and wombats', '<a href="/muh">Giraffes</a> and <strong>wombats</strong>'];
-    $data['html-with-quote'] = ['Giraffes and quote"s', '<a href="/muh">Giraffes</a> and <strong>quote"s</strong>'];
+    $data['simple-html'] = ['Giraffes and wombats', '<a href="../muh">Giraffes</a> and <strong>wombats</strong>'];
+    $data['html-with-quote'] = ['Giraffes and quote"s', '<a href="../muh">Giraffes</a> and <strong>quote"s</strong>'];
 
     $expected = 'The <em> tag makes your text look like "this".';
     $string = 'The &lt;em&gt; tag makes your text look like <em>"this"</em>.';

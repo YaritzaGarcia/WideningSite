@@ -172,8 +172,8 @@ class AreaDisplayLinkTest extends ViewsKernelTestBase {
     $view->setDisplay('page_1');
     $view->setCurrentPage(2);
     $this->executeView($view, [1]);
-    $this->assertSame('<a href="/page_1/1?name=John&amp;sort_by=created&amp;sort_order=ASC&amp;keep=keep&amp;keep_another=1&amp;page=1" class="views-display-link views-display-link-page_1 is-active">Page 1</a>', $this->renderDisplayLink($view, 'display_link_1'));
-    $this->assertSame('<a href="/page_2/1?name=John&amp;sort_by=created&amp;sort_order=ASC&amp;keep=keep&amp;keep_another=1&amp;page=1" class="views-display-link views-display-link-page_2">Page 2</a>', $this->renderDisplayLink($view, 'display_link_2'));
+    $this->assertSame('<a href="../page_1/1?name=John&amp;sort_by=created&amp;sort_order=ASC&amp;keep=keep&amp;keep_another=1&amp;page=1" class="views-display-link views-display-link-page_1 is-active">Page 1</a>', $this->renderDisplayLink($view, 'display_link_1'));
+    $this->assertSame('<a href="../page_2/1?name=John&amp;sort_by=created&amp;sort_order=ASC&amp;keep=keep&amp;keep_another=1&amp;page=1" class="views-display-link views-display-link-page_2">Page 2</a>', $this->renderDisplayLink($view, 'display_link_2'));
 
     // Assert the validation adds warning messages when a display link is added
     // to a display with different filter criteria, sort criteria, pager
@@ -333,8 +333,8 @@ class AreaDisplayLinkTest extends ViewsKernelTestBase {
     $view->destroy();
     $view->setDisplay($display_id);
     $this->executeView($view);
-    $this->assertSame('<a href="/page_1" class="views-display-link views-display-link-page_1' . $page_1_active . '">Page 1</a>', $this->renderDisplayLink($view, 'display_link_1'));
-    $this->assertSame('<a href="/page_2" class="views-display-link views-display-link-page_2' . $page_2_active . '">Page 2</a>', $this->renderDisplayLink($view, 'display_link_2'));
+    $this->assertSame('<a href="../page_1" class="views-display-link views-display-link-page_1' . $page_1_active . '">Page 1</a>', $this->renderDisplayLink($view, 'display_link_1'));
+    $this->assertSame('<a href="../page_2" class="views-display-link views-display-link-page_2' . $page_2_active . '">Page 2</a>', $this->renderDisplayLink($view, 'display_link_2'));
 
     // Assert the exposed filters, pager and contextual links are passed
     // correctly in the links.
@@ -347,8 +347,8 @@ class AreaDisplayLinkTest extends ViewsKernelTestBase {
     ]);
     $view->setCurrentPage(2);
     $this->executeView($view, [1]);
-    $this->assertSame('<a href="/page_1/1?name=John&amp;sort_by=created&amp;sort_order=ASC&amp;page=1" class="views-display-link views-display-link-page_1' . $page_1_active . '">Page 1</a>', $this->renderDisplayLink($view, 'display_link_1'));
-    $this->assertSame('<a href="/page_2/1?name=John&amp;sort_by=created&amp;sort_order=ASC&amp;page=1" class="views-display-link views-display-link-page_2' . $page_2_active . '">Page 2</a>', $this->renderDisplayLink($view, 'display_link_2'));
+    $this->assertSame('<a href="../page_1/1?name=John&amp;sort_by=created&amp;sort_order=ASC&amp;page=1" class="views-display-link views-display-link-page_1' . $page_1_active . '">Page 1</a>', $this->renderDisplayLink($view, 'display_link_1'));
+    $this->assertSame('<a href="../page_2/1?name=John&amp;sort_by=created&amp;sort_order=ASC&amp;page=1" class="views-display-link views-display-link-page_2' . $page_2_active . '">Page 2</a>', $this->renderDisplayLink($view, 'display_link_2'));
   }
 
   /**

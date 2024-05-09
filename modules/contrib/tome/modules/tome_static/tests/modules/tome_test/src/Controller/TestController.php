@@ -56,7 +56,7 @@ class TestController extends ControllerBase {
    */
   public function testPageWithPagers() {
     return [
-      '#markup' => '<a href="?page=0">Page 1</a><a href="?page=1">Page 2</a><a href="/foobar?page=2">Page 3</a>',
+      '#markup' => '<a href="?page=0">Page 1</a><a href="?page=1">Page 2</a><a href="../foobar?page=2">Page 3</a>',
       '#allowed_tags' => ['a'],
     ];
   }

@@ -51,7 +51,7 @@ function paragraphs_demo_install() {
   $paragraph4 = Paragraph::create([
     'type' => 'text',
     'field_text_demo' => [
-      'value' => '<p>A search api example can be found <a href="/paragraphs_search">here</a></p>',
+      'value' => '<p>A search api example can be found <a href="../paragraphs_search">here</a></p>',
       'format' => 'basic_html',
     ],
   ]);

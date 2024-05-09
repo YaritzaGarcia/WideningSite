@@ -121,7 +121,7 @@ class ThemeRenderAndAutoescapeTest extends KernelTestBase {
     /** @var \Drupal\Core\Render\RendererInterface $renderer */
     $renderer = \Drupal::service('renderer');
     $output = $renderer->executeInRenderContext($context, $theme_render_and_autoescape);
-    $this->assertEquals('<a href="/' . urlencode('<none>') . '"></a>', $output);
+    $this->assertEquals('<a href="../' . urlencode('<none>') . '"></a>', $output);
     /** @var \Drupal\Core\Render\BubbleableMetadata $metadata */
     $metadata = $context->pop();
     $this->assertEquals(['route'], $metadata->getCacheContexts());

@@ -144,7 +144,7 @@ class GridDialog extends FormBase {
       foreach ($available_cols as $column) {
         $title = $this->t('Column @num', ['@num' => $column]);
         $img = $this->moduleExtensionList->getPath('uswds_ckeditor_integration') . '/images/ui/col_' . $column . '.png';
-        $img_src = '<img src="/' . $img . '" title="' . $title . '" />';
+        $img_src = '<img src="../' . $img . '" title="' . $title . '" />';
         $columns[$column] = $img_src . '<p>' . $this->t('Column @num', ['@num' => $column]) . '</p>';
       }
     }

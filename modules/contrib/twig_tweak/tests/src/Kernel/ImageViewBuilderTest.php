@@ -91,7 +91,7 @@ final class ImageViewBuilderTest extends AbstractTestCase {
       ],
     ];
     self::assertRenderArray($expected_build, $build);
-    self::assertSame('<img src="/files/ocean.jpg" alt="" />', $this->renderPlain($build));
+    self::assertSame('<img src="../files/ocean.jpg" alt="" />', $this->renderPlain($build));
 
     // -- With style.
     $build = $view_builder->build($public_image, 'large', ['alt' => 'Ocean']);
@@ -113,7 +113,7 @@ final class ImageViewBuilderTest extends AbstractTestCase {
       ],
     ];
     self::assertRenderArray($expected_build, $build);
-    self::assertSame('<img alt="Ocean" src="/files/styles/large/public/ocean.jpg?itok=abc" />', $this->renderPlain($build));
+    self::assertSame('<img alt="Ocean" src="../files/styles/large/public/ocean.jpg?itok=abc" />', $this->renderPlain($build));
 
     // -- With responsive style.
     $build = $view_builder->build($public_image, 'wide', ['alt' => 'Ocean'], TRUE);
@@ -135,7 +135,7 @@ final class ImageViewBuilderTest extends AbstractTestCase {
       ],
     ];
     self::assertRenderArray($expected_build, $build);
-    self::assertSame('<picture><img src="/files/ocean.jpg" alt="Ocean" /></picture>', $this->renderPlain($build));
+    self::assertSame('<picture><img src="../files/ocean.jpg" alt="Ocean" /></picture>', $this->renderPlain($build));
 
     // -- Private image with access check.
     $build = $view_builder->build($private_image);
@@ -165,7 +165,7 @@ final class ImageViewBuilderTest extends AbstractTestCase {
       ],
     ];
     self::assertRenderArray($expected_build, $build);
-    self::assertSame('<img src="/files/sea.jpg" alt="" />', $this->renderPlain($build));
+    self::assertSame('<img src="../files/sea.jpg" alt="" />', $this->renderPlain($build));
   }
 
   /**
@@ -173,7 +173,7 @@ final class ImageViewBuilderTest extends AbstractTestCase {
    */
   private function renderPlain(array $build): string {
     $html = $this->container->get('renderer')->renderPlain($build);
-    $html = preg_replace('#src=".+/files/#s', 'src="/files/', $html);
+    $html = preg_replace('#src=".+/files/#s', 'src="../files/', $html);
     $html = preg_replace('#\?itok=.+"#', '?itok=abc"', $html);
     $html = preg_replace(['#\s{2,}#', '#\n#'], '', $html);
     return rtrim($html);

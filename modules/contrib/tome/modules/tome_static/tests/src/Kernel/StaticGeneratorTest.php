@@ -258,9 +258,9 @@ class StaticGeneratorTest extends TestBase {
     $this->assertContains('/foobar?page=2', $invoke_paths);
     $base_dir = Settings::get('tome_static_directory');
     $contents = file_get_contents("$base_dir/tome-test/pager-page/index.html");
-    $this->assertStringContainsString('href="/tome-test/pager-page"', $contents);
-    $this->assertStringContainsString('href="/tome-test/pager-page/page/2"', $contents);
-    $this->assertStringContainsString('href="/foobar/page/3"', $contents);
+    $this->assertStringContainsString('href="../tome-test/pager-page"', $contents);
+    $this->assertStringContainsString('href="../tome-test/pager-page/page/2"', $contents);
+    $this->assertStringContainsString('href="../foobar/page/3"', $contents);
   }
 
   /**

@@ -69,7 +69,7 @@ class ChainedPlaceholderStrategyTest extends UnitTestCase {
       '12345' => ['#markup' => 'special-placeholder-for-esi'],
     ];
     $result = [
-      '12345' => ['#markup' => '<esi:include src="/fragment/12345" />'],
+      '12345' => ['#markup' => '<esi:include src="../fragment/12345" />'],
     ];
 
     $prophecy = $prophet->prophesize('\Drupal\Core\Render\Placeholder\PlaceholderStrategyInterface');
@@ -99,7 +99,7 @@ class ChainedPlaceholderStrategyTest extends UnitTestCase {
     ];
 
     $esi_result = [
-      '12345' => ['#markup' => '<esi:include src="/fragment/12345" />'],
+      '12345' => ['#markup' => '<esi:include src="../fragment/12345" />'],
     ];
 
     $normal_result = [

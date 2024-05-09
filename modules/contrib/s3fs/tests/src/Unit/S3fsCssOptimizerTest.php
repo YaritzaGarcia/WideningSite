@@ -67,15 +67,15 @@ class S3fsCssOptimizerTest extends UnitTestCase {
     $cssOptimizer->rewriteFileURIBasePath = '';
 
     $this->assertEquals(
-      'url(//www.example.org/test/file.txt)',
+      'url(..//www.example.org/test/file.txt)',
       $cssOptimizer->rewriteFileURI(['', '/test/file.txt'])
     );
     $this->assertEquals(
-      'url(//www.example.org/test/file.txt)',
+      'url(..//www.example.org/test/file.txt)',
       $cssOptimizer->rewriteFileURI(['', '/core/../test/file.txt'])
     );
     $this->assertEquals(
-      'url(//www.example.org/test/file.txt)',
+      'url(..//www.example.org/test/file.txt)',
       $cssOptimizer->rewriteFileURI(['', '/core/data/../../test/file.txt'])
     );
 
@@ -134,7 +134,7 @@ class S3fsCssOptimizerTest extends UnitTestCase {
     $cssOptimizer->rewriteFileURIBasePath = '';
 
     $this->assertEquals(
-      'url(//test.example.org/test/file.txt)',
+      'url(..//test.example.org/test/file.txt)',
       $cssOptimizer->rewriteFileURI(['', '/test/file.txt'])
     );
   }

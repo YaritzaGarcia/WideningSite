@@ -56,37 +56,37 @@ class FormattableMarkupKernelTest extends KernelTestBase {
       'Hey giraffe <a href=":url">MUUUH</a>',
       'route:system.admin',
       [],
-      'Hey giraffe <a href="/admin">MUUUH</a>',
+      'Hey giraffe <a href="../admin">MUUUH</a>',
     ];
     $data['routed-with-query'] = [
       'Hey giraffe <a href=":url">MUUUH</a>',
       'route:system.admin',
       ['query' => ['bar' => 'baz#']],
-      'Hey giraffe <a href="/admin?bar=baz%23">MUUUH</a>',
+      'Hey giraffe <a href="../admin?bar=baz%23">MUUUH</a>',
     ];
     $data['routed-with-fragment'] = [
       'Hey giraffe <a href=":url">MUUUH</a>',
       'route:system.admin',
       ['fragment' => 'bar&lt;'],
-      'Hey giraffe <a href="/admin#bar&amp;lt;">MUUUH</a>',
+      'Hey giraffe <a href="../admin#bar&amp;lt;">MUUUH</a>',
     ];
     $data['unrouted-url'] = [
       'Hey giraffe <a href=":url">MUUUH</a>',
       'base://foo',
       [],
-      'Hey giraffe <a href="/foo">MUUUH</a>',
+      'Hey giraffe <a href="../foo">MUUUH</a>',
     ];
     $data['unrouted-with-query'] = [
       'Hey giraffe <a href=":url">MUUUH</a>',
       'base://foo',
       ['query' => ['bar' => 'baz#']],
-      'Hey giraffe <a href="/foo?bar=baz%23">MUUUH</a>',
+      'Hey giraffe <a href="../foo?bar=baz%23">MUUUH</a>',
     ];
     $data['unrouted-with-fragment'] = [
       'Hey giraffe <a href=":url">MUUUH</a>',
       'base://foo',
       ['fragment' => 'bar&lt;'],
-      'Hey giraffe <a href="/foo#bar&amp;lt;">MUUUH</a>',
+      'Hey giraffe <a href="../foo#bar&amp;lt;">MUUUH</a>',
     ];
     $data['mailto-protocol'] = [
       'Hey giraffe <a href=":url">MUUUH</a>',

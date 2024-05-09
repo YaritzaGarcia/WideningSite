@@ -74,7 +74,7 @@ class LayoutBuilderDisableInteractionsTest extends WebDriverTestBase {
       'info' => 'Block with link',
       'body' => [
         // Create a link that should be disabled in Layout Builder preview.
-        'value' => '<a id="link-that-should-be-disabled" href="/search/node">Take me away</a>',
+        'value' => '<a id="link-that-should-be-disabled" href="../search/node">Take me away</a>',
         'format' => 'full_html',
       ],
     ])->save();

@@ -226,7 +226,7 @@ class UpgradePathTest extends SmartDefaultSettingsTest {
       ],
       'expected_messages' => [
         'status' => [
-          'To maintain the capabilities of this text format, <a target="_blank" href="/admin/help/ckeditor5#migration-settings">the CKEditor 5 migration</a> did the following:  Added these tags/attributes to the Source Editing Plugin\'s <a target="_blank" href="/admin/help/ckeditor5#source-editing">Manually editable HTML tags</a> setting: &lt;drupal-entity data-entity-type data-embed-button&gt;. Additional details are available in your logs.',
+          'To maintain the capabilities of this text format, <a target="_blank" href="../admin/help/ckeditor5#migration-settings">the CKEditor 5 migration</a> did the following:  Added these tags/attributes to the Source Editing Plugin\'s <a target="_blank" href="../admin/help/ckeditor5#source-editing">Manually editable HTML tags</a> setting: &lt;drupal-entity data-entity-type data-embed-button&gt;. Additional details are available in your logs.',
         ],
       ],
     ];

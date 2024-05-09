@@ -127,7 +127,7 @@ class ForumUninstallValidatorTest extends UnitTestCase {
     $module = 'forum';
     $expected = [
       'To uninstall Forum, first delete all <em>Forum</em> content',
-      'To uninstall Forum, first delete all <a href="/path/to/vocabulary/overview"><em class="placeholder">Vocabulary label</em></a> terms',
+      'To uninstall Forum, first delete all <a href="../path/to/vocabulary/overview"><em class="placeholder">Vocabulary label</em></a> terms',
     ];
     $reasons = $this->forumUninstallValidator->validate($module);
     $this->assertEquals($expected, $reasons);
@@ -198,7 +198,7 @@ class ForumUninstallValidatorTest extends UnitTestCase {
 
     $module = 'forum';
     $expected = [
-      'To uninstall Forum, first delete all <a href="/path/to/vocabulary/overview"><em class="placeholder">Vocabulary label</em></a> terms',
+      'To uninstall Forum, first delete all <a href="../path/to/vocabulary/overview"><em class="placeholder">Vocabulary label</em></a> terms',
     ];
     $reasons = $this->forumUninstallValidator->validate($module);
     $this->assertEquals($expected, $reasons);

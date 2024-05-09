@@ -71,7 +71,7 @@ class HtmlResponseAttachmentsTest extends BrowserTestBase {
 
     // Check that duplicate alternate URLs with different hreflang attributes
     // are allowed.
-    $this->assertSession()->elementsCount('xpath', '//head/link[@rel="alternate"][@href="/foo/bar"]', 2);
+    $this->assertSession()->elementsCount('xpath', '//head/link[@rel="alternate"][@href="../foo/bar"]', 2);
   }
 
   /**

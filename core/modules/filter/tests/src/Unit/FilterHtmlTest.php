@@ -54,7 +54,7 @@ class FilterHtmlTest extends UnitTestCase {
    */
   public function providerFilterAttributes() {
     return [
-      ['<a href="/blog" title="Blog">Blog</a>', '<a href="/blog">Blog</a>'],
+      ['<a href="../blog" title="Blog">Blog</a>', '<a href="../blog">Blog</a>'],
       ['<p dir="rtl" />', '<p dir="rtl"></p>'],
       ['<p dir="bogus" />', '<p></p>'],
       ['<p id="first" />', '<p></p>'],
